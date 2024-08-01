@@ -24,6 +24,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -89,6 +92,7 @@
       <workItem from="1722403387802" duration="2115000" />
       <workItem from="1722487902921" duration="1924000" />
       <workItem from="1722493693488" duration="2645000" />
+      <workItem from="1722520517020" duration="660000" />
     </task>
     <servers />
   </component>
