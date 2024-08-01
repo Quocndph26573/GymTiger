@@ -81,7 +81,8 @@
                                                 <i class="fa fa-minus"></i>
                                             </button>
                                         </div>
-                                        <input type="number" class="form-control form-control-sm bg-secondary text-center" max="1000000" name="quantity" th:value="${cartItem.quantity}">
+                                        <input type="text" class="form-control form-control-sm  text-center" max="1000000" name="quantity" th:value="${cartItem.quantity}"
+                                                style="margin-left: 5px; margin-right: 5px">
                                         <div class="input-group-btn">
                                             <button class="btn btn-sm btn-primary btn-plus" type="button">
                                                 <i class="fa fa-plus"></i>
@@ -120,7 +121,7 @@
                     </div>
                     <div class="card-footer border-secondary bg-transparent">
                         <div class="d-flex justify-content-between mt-2">
-                            <h5 class="font-weight-bold">Tạm tính</h5>
+                            <h5 class="font-weight-bold">Thành tiền</h5>
                             <h5 class="font-weight-bold"
                                 th:text="'₫' + ${#numbers.formatDecimal(grandTotal, 0, 'COMMA', 0, 'POINT')}"></h5>
                         </div>

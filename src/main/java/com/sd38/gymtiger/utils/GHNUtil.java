@@ -11,6 +11,7 @@ package com.sd38.gymtiger.utils;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.sd38.gymtiger.config.GHNConfig;
+import com.sd38.gymtiger.model.Address;
 import com.sd38.gymtiger.request.GHNRequest;
 import com.sd38.gymtiger.model.District;
 import com.sd38.gymtiger.model.Province;
@@ -187,25 +188,25 @@ public class GHNUtil {
         return resultObject.get("data").getAsJsonObject().get("total").getAsBigDecimal();
     }
 
-//    public static void main(String[] args) {
-//        GHNUtil ghnUtil = new GHNUtil();
-//        Address address = Address.builder().city("Thành phố Hà Nội")
-//                .district("Quận Nam Từ Liêm").ward("Phường Xuân Phương").build();
-//        System.out.println(ghnUtil.getProvinces(address.getCity()));
-//        System.out.println(ghnUtil.getDistricts(201, address.getDistrict()));
-//        System.out.println(ghnUtil.getWard(3440, address.getWard()));
-//        ghnUtil.getServices();
+    public static void main(String[] args) {
+        GHNUtil ghnUtil = new GHNUtil();
+        Address address = Address.builder().city("Thành phố Hà Nội")
+                .district("Quận Nam Từ Liêm").ward("Phường Xuân Phương").build();
+        System.out.println(ghnUtil.getProvinces(address.getCity()));
+        System.out.println(ghnUtil.getDistricts(201, address.getDistrict()));
+        System.out.println(ghnUtil.getWard(3440, address.getWard()));
+        ghnUtil.getServices();
 
-//        Address toAddress = Address.builder()
-//                .city("Thành phố Hà Nội").district("Huyện Quốc Oai").ward("Xã Yên Sơn")
-//                .build();
+        Address toAddress = Address.builder()
+                .city("Thành phố Hà Nội").district("Huyện Quốc Oai").ward("Xã Yên Sơn")
+                .build();
 
-//        System.out.println(ghnUtil.getProvinces(toAddress.getCity()));
-//        System.out.println(ghnUtil.getDistricts(201, toAddress.getDistrict()));
-//        System.out.println(ghnUtil.getWard(2004, toAddress.getWard()));
+        System.out.println(ghnUtil.getProvinces(toAddress.getCity()));
+        System.out.println(ghnUtil.getDistricts(201, toAddress.getDistrict()));
+        System.out.println(ghnUtil.getWard(2004, toAddress.getWard()));
 
 
-//    }
+    }
 
     public static String removeAccent(String s) {
         String nfdNormalizedString = Normalizer.normalize(s, Normalizer.Form.NFD);

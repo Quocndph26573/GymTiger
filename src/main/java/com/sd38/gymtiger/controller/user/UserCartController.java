@@ -1,6 +1,7 @@
 package com.sd38.gymtiger.controller.user;
 
 import com.sd38.gymtiger.model.Cart;
+import com.sd38.gymtiger.model.CartDetail;
 import com.sd38.gymtiger.model.ProductDetail;
 import com.sd38.gymtiger.model.SessionCart;
 import com.sd38.gymtiger.service.CartService;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class UserCartController {
@@ -89,6 +92,13 @@ public class UserCartController {
             boolean check = cartService.addToCart(productDetail, quantity, email);
             if (check){
                 Cart cart = cartService.getCart(email);
+//                List<CartDetail> cartdetail = new ArrayList<>();
+//                for (CartDetail detail : cartdetail ){
+//                    if (detail.getProductDetail().getId().equals(productId)) {
+//                        item.setQuantity(item.getQuantity() + 1);
+//                        return "redirect:/cart";
+//                    }
+//                }
                 session.setAttribute("totalItems", cart.getTotalItems());
                 redirectAttributes.addFlashAttribute("mess", "Thêm giỏ hàng thành công!");
             } else {
@@ -149,4 +159,6 @@ public class UserCartController {
         redirectAttributes.addFlashAttribute("mess","Xoá thành công");
         return "redirect:/cart";
     }
+
+
 }

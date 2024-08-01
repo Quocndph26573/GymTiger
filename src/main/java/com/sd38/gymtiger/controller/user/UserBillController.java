@@ -86,6 +86,7 @@ public class UserBillController {
             model.addAttribute("listVoucher", listVoucher);
             model.addAttribute("loggedIn", false);
             model.addAttribute("email", "");
+            attributes.addFlashAttribute("mess", "Đã xác nhận thanh toán!");
         } else {
             Customer customer = customerService.findByEmail(principal.getName());
             Cart cart = cartService.getCart(principal.getName());
@@ -107,6 +108,7 @@ public class UserBillController {
             model.addAttribute("email", principal.getName());
             model.addAttribute("defaultAddress", defaultAddress);
             model.addAttribute("listAddress", listAddress);
+            attributes.addFlashAttribute("mess", "Đã xác nhận thanh toán!");
         }
         return "/user/checkout";
     }
@@ -240,27 +242,6 @@ public class UserBillController {
                     }
                     BigDecimal totalPrice = sessionCart.getTotalPrice().add(shippingFee).subtract(uuDai.getValue());
                     jsonData = paymentService.vnpayCreate(request, totalPrice.longValue(), specificAddress, ward, district, city, name, phoneNumber, email, String.valueOf(voucher));
-                }
-                return "redirect:" + jsonData.get("payUrl").toString().replaceAll("\"", "");
-            }
-            if (payment.equals("Momo")){
-                BigDecimal shippingFee = ghnUtil.calculateShippingFee(city, district, ward, sessionCart.getTotalItems());
-                //Long dok
-                if (voucher == null){
-                    BigDecimal totalPrice = sessionCart.getTotalPrice().add(shippingFee);
-                    jsonData = paymentService.MomoPayCreate(totalPrice.longValue(), specificAddress, ward, district, city, name, phoneNumber, email, null);
-                } else {
-                    Voucher uuDai = voucherService.getVoucherById(voucher);
-                    if (uuDai.getStatus() != 1){
-                        attributes.addFlashAttribute("error", "Voucher đã hết số lượng hoặc hết hạn");
-                        return "redirect:/checkout";
-                    }
-                    if (sessionCart.getTotalPrice().compareTo(uuDai.getMinimumPrice()) < 0){
-                        attributes.addFlashAttribute("error", "Đơn hàng không đủ giá tối thiểu của voucher");
-                        return "redirect:/checkout";
-                    }
-                    BigDecimal totalPrice = sessionCart.getTotalPrice().add(shippingFee).subtract(uuDai.getValue());
-                    jsonData = paymentService.MomoPayCreate(totalPrice.longValue(), specificAddress, ward, district, city, name, phoneNumber, email, String.valueOf(voucher));
                 }
                 return "redirect:" + jsonData.get("payUrl").toString().replaceAll("\"", "");
             }

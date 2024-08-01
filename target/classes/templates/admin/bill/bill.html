@@ -223,7 +223,9 @@
             </li>
         </ul>
     </div>
+
     <script th:inline="javascript">
+        // check ngày hợp lệ
         $(document).ready(function () {
             $('#form-search').on('submit', function (e) {
                 if($('#ngayTaoStart').val() && $('#ngayTaoEnd').val()) {
@@ -239,6 +241,7 @@
                 return true;
             })
 
+            //button hủy đơn
             $('.cancel-btn').on('click', function (e) {
                 e.preventDefault();
                 Swal.fire({
@@ -256,23 +259,46 @@
                 })
             });
 
+            //button xác nhận đơn hàng
             $('.confirm-btn').on('click', function (e) {
                 e.preventDefault();
+                var moTa = "";
                 Swal.fire({
                     title: "Xác nhận?",
-                    text: `Xác nhận đơn hàng này?`,
+                    text: "Xác nhận đơn hàng này?",
+                    html: `Mô tả: <input type="text" id="moTaInput" placeholder="Nhập mô tả (tùy chọn)">`,
                     icon: "warning",
                     showCancelButton: true,
                     cancelButtonText: 'Hủy',
                     confirmButtonText: 'Xác nhận',
-                    reverseButtons: true
+                    reverseButtons: true,
+                    preConfirm: () => {
+                    moTa = document.getElementById('moTaInput').value;
+                }
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = $(this).attr('href');
+                        if (moTa) {
+                            // Nếu có mô tả, thêm nó vào thông báo
+                            Swal.fire({
+                                title: 'Xác nhận!',
+                                text: `Đơn hàng đã được xác nhận! \n\nMô tả: ${moTa}`,
+                                icon: 'success'
+                            });
+                            window.location.href = $(this).attr('href');
                     }
-                })
+                            // else {
+                    //     Swal.fire({
+                    //         title: 'Xác nhận!',
+                    //         text: `Đơn hàng đã được xác nhận!`,
+                    //         icon: 'success'
+                    //         });
+                    //     }
+                    // }
+
+                }})
             });
 
+            //button xác nhân giao đon hàng
             $('.shipping-btn').on('click', function (e) {
                 e.preventDefault();
                 Swal.fire({
