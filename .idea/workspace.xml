@@ -7,6 +7,11 @@
     <list default="true" id="f1513066-5a13-4a4b-9cb0-f9f78d254f25" name="Changes" comment="* cần sửa&#10;api giao hàng nhanh - phí ship&#10;voucher&#10;sửa 1 chút giao diện&#10;lí do hủy &#10;lỗi trùng lặp đơn hàng&#10;Loại bỏ phần thống kê doanh thu từ hóa đơn hủy&#10;&#10;thiếu trang about.html">
       <changelist_data name="NguyenHuuVietPH26303" email="vietnhph26303@fpt.edu.vn" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/user/css/user.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/user.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/user/css/user.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/user/css/user.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +20,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -51,6 +63,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -94,7 +107,12 @@
       <workItem from="1722493693488" duration="2645000" />
       <workItem from="1722520517020" duration="1269000" />
       <workItem from="1722574704402" duration="600000" />
-      <workItem from="1722599517063" duration="216000" />
+      <workItem from="1722599517063" duration="3502000" />
+      <workItem from="1722695573804" duration="89000" />
+      <workItem from="1722833971868" duration="592000" />
+      <workItem from="1723180147594" duration="599000" />
+      <workItem from="1723209241712" duration="4105000" />
+      <workItem from="1723280304722" duration="1072000" />
     </task>
     <servers />
   </component>
