@@ -4,14 +4,204 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1513066-5a13-4a4b-9cb0-f9f78d254f25" name="Changes" comment="* cần sửa&#10;api giao hàng nhanh - phí ship&#10;voucher&#10;sửa 1 chút giao diện&#10;lí do hủy &#10;lỗi trùng lặp đơn hàng&#10;Loại bỏ phần thống kê doanh thu từ hóa đơn hủy&#10;&#10;thiếu trang about.html">
-      <changelist_data name="NguyenHuuVietPH26303" email="vietnhph26303@fpt.edu.vn" />
+    <list default="true" id="26a404a7-46ce-47e3-8dda-c9c95e4f9e2d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/ShippingCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/admin/images/logo0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/top1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/top2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/bill/statusHistory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/bill/bill-detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/bill/bill.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/bill/invoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/bill/statusHistory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/cart/cart-detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/cart/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/cart/offline-cart-fragment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/cart/offline-cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/cart/side_form/chosen_product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/cart/side_form/customers_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/cart/side_form/product_detail_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/cart/summary-frag.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/cartdetail/cartdetail-detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/cartdetail/cartdetail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employee/employee-layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cors-anywhere/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/cors-anywhere/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cors-anywhere/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/cors-anywhere/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/config/GHNConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/config/GHNConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/config/MailConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/config/MailConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/config/MomoPaymentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/config/MomoPaymentConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/config/VNPaymentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/config/VNPaymentConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/config/VietQRConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/config/VietQRConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/BillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/BillController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/ErrorHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/ErrorHandlerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/ExcelTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/ExcelTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/OfflineCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/OfflineCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/RestAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/RestAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/RestOfflineCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/RestOfflineCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/VoucherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/admin/VoucherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/user/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/user/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/user/UserBillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/controller/user/UserBillController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/dto/admin/thongke/TKKhoangNgay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/dto/admin/thongke/TKKhoangNgay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/dto/admin/thongke/TKNam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/dto/admin/thongke/TKNam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/dto/admin/thongke/TKNgay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/dto/admin/thongke/TKNgay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/dto/admin/thongke/TKThang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/dto/admin/thongke/TKThang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/dto/admin/thongke/TKTuan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/dto/admin/thongke/TKTuan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/District.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/OfflineCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/OfflineCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/OfflineCartView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/OfflineCartView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/Province.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/Province.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/TempBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/TempBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/Ward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/model/Ward.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/repository/OfflineCartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/repository/OfflineCartRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/request/GHNRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/request/GHNRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/request/VietQRRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/request/VietQRRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/response/CustomerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/response/CustomerResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/response/QrRespone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/response/QrRespone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/service/OfflineCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/service/OfflineCartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/service/impl/BillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/service/impl/BillServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/service/impl/OfflineCartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/service/impl/OfflineCartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/service/impl/PaymentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/service/impl/PaymentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/service/impl/VoucherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/service/impl/VoucherServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/utils/GHNUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/utils/GHNUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/utils/attribute/SizeExcelUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sd38/gymtiger/utils/attribute/SizeExcelUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/assets/css/c404.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/assets/css/c404.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/assets/css/c500.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/assets/css/c500.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/assets/css/invoice.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/assets/css/invoice.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/assets/css/offline-cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/assets/css/offline-cart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/assets/js/c500.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/assets/js/c500.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/assets/js/pos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/assets/js/pos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/vendors/bootstrap/build/ship.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/vendors/bootstrap/build/ship.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/user/css/user.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/user.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/user/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/user/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/user/js/jquery-1.11.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/user/js/jquery-migrate-1.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/user/js/slick.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/user/js/templatemo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/user/js/templatemo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/admin-layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/admin-layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/bill/bill-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/bill/bill-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/bill/bill.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/bill/bill.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/bill/invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/bill/invoice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/cart/offline-cart-fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/cart/offline-cart-fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/cart/offline-cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/cart/offline-cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/cart/side_form/chosen_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/cart/side_form/chosen_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/cart/side_form/customers_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/cart/side_form/customers_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/cart/side_form/product_detail_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/cart/side_form/product_detail_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/cart/summary-frag.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/cart/summary-frag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/statistic/statistic.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/statistic/statistic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/voucher/voucher-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/voucher/voucher-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/voucher/voucher.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/voucher/voucher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common/c404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/common/c404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common/c500.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/common/c500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common/change-pass.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/common/change-pass.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common/forgor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/common/forgor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/common/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/fragments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/config/GHNConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/config/GHNConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/config/MomoPaymentConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/config/MomoPaymentConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/config/VNPaymentConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/config/VNPaymentConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/config/VietQRConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/config/VietQRConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/BillController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/BillController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/ErrorHandlerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/ErrorHandlerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/ExcelTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/ExcelTemplate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/ImageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/ImageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/OfflineCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/OfflineCartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/RestAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/RestAccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/RestOfflineCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/RestOfflineCartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/VoucherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/admin/VoucherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/user/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/user/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/user/UserBillController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/controller/user/UserBillController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/dto/admin/thongke/TKKhoangNgay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/dto/admin/thongke/TKKhoangNgay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/dto/admin/thongke/TKNam.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/dto/admin/thongke/TKNam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/dto/admin/thongke/TKNgay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/dto/admin/thongke/TKNgay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/dto/admin/thongke/TKThang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/dto/admin/thongke/TKThang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/dto/admin/thongke/TKTuan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/dto/admin/thongke/TKTuan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/Color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/District.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/District.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/OfflineCart$OfflineCartBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/OfflineCart$OfflineCartBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/OfflineCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/OfflineCart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/OfflineCartView$OfflineCartViewBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/OfflineCartView$OfflineCartViewBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/OfflineCartView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/OfflineCartView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/Province.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/Province.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/TempBill$TempBillBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/TempBill$TempBillBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/TempBill.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/TempBill.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/Ward.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/model/Ward.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/repository/OfflineCartRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/repository/OfflineCartRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/request/GHNRequest$GHNRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/request/GHNRequest$GHNRequestBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/request/GHNRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/request/GHNRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/request/VietQRRequest$VietQRRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/request/VietQRRequest$VietQRRequestBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/request/VietQRRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/request/VietQRRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/response/CustomerResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/response/CustomerResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/response/QrRespone.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/response/QrRespone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/service/impl/BillServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/service/impl/BillServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/service/impl/OfflineCartServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/service/impl/OfflineCartServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/service/impl/PaymentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/service/impl/PaymentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/service/impl/VoucherServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/service/impl/VoucherServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/utils/GHNUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/utils/GHNUtil$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/utils/GHNUtil$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/utils/GHNUtil$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/utils/GHNUtil$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/utils/GHNUtil$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/utils/GHNUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/utils/GHNUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/utils/attribute/SizeExcelUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sd38/gymtiger/utils/attribute/SizeExcelUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/admin/assets/css/c404.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin/assets/css/c404.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/admin/assets/css/c500.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin/assets/css/c500.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/admin/assets/css/invoice.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin/assets/css/invoice.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/admin/assets/css/offline-cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin/assets/css/offline-cart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/admin/assets/js/c500.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin/assets/js/c500.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/admin/assets/js/pos.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin/assets/js/pos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/admin/vendors/bootstrap/build/ship.sh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin/vendors/bootstrap/build/ship.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/user/css/user.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/user/css/user.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/user/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/user/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/user/js/jquery-1.11.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/user/js/jquery-migrate-1.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/user/js/slick.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/user/js/templatemo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/user/js/templatemo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/admin-layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/admin-layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/bill/bill-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/bill/bill-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/bill/bill.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/bill/bill.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/bill/invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/bill/invoice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/cart/offline-cart-fragment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/cart/offline-cart-fragment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/cart/offline-cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/cart/offline-cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/cart/side_form/chosen_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/cart/side_form/chosen_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/cart/side_form/customers_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/cart/side_form/customers_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/cart/side_form/product_detail_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/cart/side_form/product_detail_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/cart/summary-frag.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/cart/summary-frag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/statistic/statistic.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/statistic/statistic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/voucher/voucher-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/voucher/voucher-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/voucher/voucher.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/voucher/voucher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/common/c404.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/common/c404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/common/c500.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/common/c500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/common/change-pass.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/common/change-pass.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/common/forgor.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/common/forgor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/common/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/common/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/shop.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,20 +214,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="NguyenHuuVietPH26303 &lt;vietnhph26303@fpt.edu.vn&gt;" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitToolBoxStore">
-    <option name="projectConfigVersion" value="5" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,13 +232,14 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2jV4KfrhjBPwgvsqF7y3sofCh6B" />
+  <component name="ProjectId" id="2kza9B6qhwpQwmhKeaaeeoNFrCh" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -63,16 +247,25 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/DOWLOAD/GymTiger (1)/GymTiger/src/main/resources/templates/employee&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;1bd48089b297ff4cd3a0e6a2e9887d1c&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DOWLOAD\GymTiger (1)\GymTiger\src\main\resources\templates\employee" />
+      <recent name="D:\DOWLOAD\GymTiger (1)\GymTiger\src\main\resources\templates\admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\DOWLOAD\GymTiger (1)\GymTiger\src\main\resources\templates\employee" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="GymTigerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="GymTiger" />
@@ -85,42 +278,33 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f1513066-5a13-4a4b-9cb0-f9f78d254f25" name="Changes" comment="" />
-      <created>1721458861752</created>
+      <changelist id="26a404a7-46ce-47e3-8dda-c9c95e4f9e2d" name="Changes" comment="" />
+      <created>1724288705778</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1721458861752</updated>
-      <workItem from="1721458872203" duration="5650000" />
-      <workItem from="1721472667833" duration="3095000" />
-      <workItem from="1721567804964" duration="432000" />
-      <workItem from="1721569058603" duration="1213000" />
-      <workItem from="1721724707537" duration="588000" />
-      <workItem from="1721725662607" duration="1375000" />
-      <workItem from="1721918309518" duration="545000" />
-      <workItem from="1721985599691" duration="10186000" />
-      <workItem from="1722045212049" duration="16681000" />
-      <workItem from="1722230158123" duration="1928000" />
-      <workItem from="1722238785502" duration="5691000" />
-      <workItem from="1722342596396" duration="4407000" />
-      <workItem from="1722403387802" duration="2115000" />
-      <workItem from="1722487902921" duration="1924000" />
-      <workItem from="1722493693488" duration="2645000" />
-      <workItem from="1722520517020" duration="1269000" />
-      <workItem from="1722574704402" duration="600000" />
-      <workItem from="1722599517063" duration="3502000" />
-      <workItem from="1722695573804" duration="89000" />
-      <workItem from="1722833971868" duration="592000" />
-      <workItem from="1723180147594" duration="599000" />
-      <workItem from="1723209241712" duration="4105000" />
-      <workItem from="1723280304722" duration="1072000" />
+      <updated>1724288705778</updated>
+      <workItem from="1724288707116" duration="8034000" />
+      <workItem from="1724302824135" duration="7469000" />
+      <workItem from="1724377205934" duration="3808000" />
+      <workItem from="1724424967637" duration="2869000" />
+      <workItem from="1724485896981" duration="2781000" />
+      <workItem from="1724513455090" duration="4900000" />
+      <workItem from="1724593674570" duration="1274000" />
+      <workItem from="1724669662918" duration="5825000" />
+      <workItem from="1724722298076" duration="1259000" />
+      <workItem from="1724727547279" duration="9282000" />
+      <workItem from="1724739498309" duration="752000" />
+      <workItem from="1724746544679" duration="1465000" />
+      <workItem from="1724757098142" duration="1825000" />
+      <workItem from="1724805505857" duration="30000" />
+      <workItem from="1724849461596" duration="1281000" />
+      <workItem from="1724907151352" duration="1444000" />
+      <workItem from="1725025356284" duration="1524000" />
+      <workItem from="1725110119109" duration="2508000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="* cần sửa&#10;api giao hàng nhanh - phí ship&#10;voucher&#10;sửa 1 chút giao diện&#10;lí do hủy &#10;lỗi trùng lặp đơn hàng&#10;Loại bỏ phần thống kê doanh thu từ hóa đơn hủy&#10;&#10;thiếu trang about.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="* cần sửa&#10;api giao hàng nhanh - phí ship&#10;voucher&#10;sửa 1 chút giao diện&#10;lí do hủy &#10;lỗi trùng lặp đơn hàng&#10;Loại bỏ phần thống kê doanh thu từ hóa đơn hủy&#10;&#10;thiếu trang about.html" />
   </component>
 </project>

@@ -1,18 +1,9 @@
-/*
- *  © 2023 Nyaruko166
- */
-
-/*
- *  © 2023 Nyaruko166
- */
-
 package com.sd38.gymtiger.config;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class GHNConfig {
-
     public static String apiProvinces = "https://online-gateway.ghn.vn/shiip/public-api/master-data/province";
 
     public static String apiDistricts = "https://online-gateway.ghn.vn/shiip/public-api/master-data/district?province_id=";
@@ -25,7 +16,16 @@ public class GHNConfig {
 
     public static String headerToken = "ae5e892b-8b9b-11ee-96dc-de6f804954c9";
 
+    //Token Nova
+//    public static String headerToken = "ae5e892b-8b9b-11ee-96dc-de6f804954c9";
     public static Map<String, Integer> senderId = new HashMap<>();
+
+//    static {
+//        senderId.put("shopID", 2509018);
+//        senderId.put("provinceID", 201);
+//        senderId.put("districtID", 3440);
+//        senderId.put("wardCode", 13010);
+//    }
 
     static {
         senderId.put("shopID", 1187844);
@@ -33,5 +33,4 @@ public class GHNConfig {
         senderId.put("districtID", 3440);
         senderId.put("wardCode", 13010);
     }
-
 }

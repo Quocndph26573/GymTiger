@@ -11,6 +11,6 @@ public interface TKNam {
 
     BigDecimal getDoanhThu();
 
-    Integer getSoLuongHuy();
+
 
 }

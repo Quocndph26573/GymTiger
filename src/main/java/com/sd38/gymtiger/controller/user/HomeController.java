@@ -261,4 +261,9 @@ public class HomeController {
     public String contact() {
         return "/user/contact";
     }
+
+    @GetMapping("/about")
+    public String about() {
+        return "/user/about";
+    }
 }

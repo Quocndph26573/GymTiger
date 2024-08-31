@@ -1,5 +1,5 @@
 .border-navbar {
-    border: 1px solid #d19c97;
+    border: 1px solid #0abde3;
 }
 
 .border-featured {
@@ -7,13 +7,13 @@
 }
 
 .btn-shopnow {
-    background-color: #d19c97;
+    background-color: #0abde3;
     color: black;
 }
 
 .btn-shopnow:hover {
     background-color: white;
-    color: #d19c97;
+    color: #0abde3;
     transition: 0.4s all;
 }
 
@@ -41,7 +41,7 @@
     color: white;
     font-weight: bold;
     font-size: 40px;
-    background-color: #d19c97;
+    background-color: #0abde3;
     padding-inline: 15px;
 }
 
@@ -318,31 +318,31 @@
 }
 
 .combobox-select {
-    border: 2px solid #d19c97;
+    border: 2px solid #0abde3;
     border-radius: 8px;
     width: 100%;
     color: white;
-    background-color: #d19c97;
+    background-color: #0abde3;
 }
 
 .combobox-select:active {
-    background-color: #d19c97;
+    background-color: #0abde3;
 }
 
 .combobox-select:focus {
-    background-color: #d19c97;
+    background-color: #0abde3;
     color: white;
 }
 
 
 .btn-pagination {
-    background-color: #d19c97;
+    background-color: #0abde3;
     color: white;
     border-radius: 8px;
 }
 
 .btn-pagination:hover {
-    background-color: #d17d75;
+    background-color: #0a58ca;
 }
 
 .price-product-detail {
@@ -365,7 +365,7 @@
     font-size: 12px;
     margin-top: 5px;
     margin-left: 5px;
-    background-color: #d19c97;
+    background-color: #0abde3;
     width: 25%;
     height: 10%;
     animation: discount 1s infinite;
@@ -406,9 +406,9 @@
 }
 
 .option-list {
-    background-color: #d19c97;
+    background-color: #0abde3;
     border-radius: 8px;
-    border: 1px #d19c97;
+    border: 1px #0abde3;
     width: 100%;
     height: 38px;
     color: white;
@@ -419,12 +419,12 @@
 }
 
 .option-list:active {
-    border: 1px #d19c97 !important;
+    border: 1px #0abde3 !important;
 }
 
 .option-list:focus {
-    border: 1px #d19c97;
-    outline: 1px auto #d19c97;
+    border: 1px #0abde3;
+    outline: 1px auto #0abde3;
 }
 
 .text-option-search {
@@ -496,7 +496,7 @@
     left: 0;
     height: 14px;
     border-radius: 14px;
-    background-color: #d19c97;
+    background-color: #0abde3;
 }
 
 [slider] > div > [thumb] {
@@ -598,7 +598,7 @@ div[slider] > input[type=range]::-ms-tooltip {
     margin-left: -40px;
     top: -39px;
     z-index:3;
-    background-color: #d19c97;
+    background-color: #0abde3;
     color: rgb(237, 241, 255);
     width: 85px;
     height: 28px;
@@ -620,7 +620,7 @@ div[slider] > input[type=range]::-ms-tooltip {
     border-right: 14px solid transparent;
     border-top-width: 16px;
     border-top-style: solid;
-    border-top-color: #d19c97;
+    border-top-color: #0abde3;
 }
 
 [slider] > div > [sign] > span {
@@ -656,13 +656,13 @@ div[slider] > input[type=range]::-ms-tooltip {
     border-radius: 9px;
     text-align: center;
     border: 0px;
-    background: #d19c97;
+    background: #0abde3;
     color: white;
 }
 
 .price-field input:focus-visible {
     outline: none;
-    border: 1px solid #d19c97 !important;
+    border: 1px solid #0abde3 !important;
 }
 
 .price-input {
@@ -695,7 +695,7 @@ input::-webkit-inner-spin-button {
     right: 0%;
     position: absolute;
     border-radius: 5px;
-    background: #d19c97;
+    background: #0abde3;
 }
 
 .range-input {

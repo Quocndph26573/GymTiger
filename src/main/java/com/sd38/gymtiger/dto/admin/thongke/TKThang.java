@@ -11,6 +11,4 @@ public interface TKThang {
 
     BigDecimal getDoanhThu();
 
-    Integer getSoLuongHuy();
-
 }

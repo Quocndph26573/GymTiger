@@ -93,4 +93,17 @@ public class ExcelTemplate {
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .body(resource);
     }
+
+    @GetMapping("/bill")
+    public ResponseEntity<?> templateBill() throws FileNotFoundException {
+        String path = "./src/main/resources/static/template/billTemplate.xlsx";
+        File file = new File(path);
+        InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
+        return ResponseEntity.ok()
+                // Content-Disposition
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + file.getName())
+                // Content-Type
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(resource);
+    }
 }

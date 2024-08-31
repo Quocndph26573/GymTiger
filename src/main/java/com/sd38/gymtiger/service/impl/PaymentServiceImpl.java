@@ -88,32 +88,13 @@ public class PaymentServiceImpl implements PaymentService {
         int random_id = new Random().nextInt(1000000);
 
         JsonObject embed_data = new JsonObject();
-        embed_data.addProperty("redirecturl", "http://localhost:8080/zalo/return");
-
-//        JsonObject item = new JsonObject();
-//        item.addProperty("itemid", "knb");
-//        item.addProperty("itemname", "kim nguyen bao");
-//        item.addProperty("itemprice", "198400");
-//        item.addProperty("itemquantity", 1);
-//        jsonObject.add("item", item);
-
-//        Map<String, Object> order = new HashMap<String, Object>() {{
-//            put("app_id", ZaloPayConfig.appid);
-//            put("app_trans_id", ZaloPayConfig.getCurrentTimeString("yyMMdd") + "_" + random_id); // translation missing: vi.docs.shared.sample_code.comments.app_trans_id
-//            put("app_time", System.currentTimeMillis()); // milliseconds
-//            put("app_user", "Nyaruko166");
-//            put("amount", amount);
-//            put("description", "GymTiger - Thanh Toán Đơn Hàng #" + random_id);
-//            put("bank_code", "");
-//            put("item", "[{}]");
-//            put("embed_data", embed_data);
-//        }};
+        embed_data.addProperty("redirecturl", "http://localhost:3000/zalo/return");
 
         ZaloPaymentRequest zaloPaymentRequest = ZaloPaymentRequest.builder()
                 .app_id(Long.valueOf(ZaloPayConfig.appid))
                 .app_trans_id(ZaloPayConfig.getCurrentTimeString("yyMMdd") + "_" + random_id)
                 .app_time(Long.valueOf(String.valueOf(System.currentTimeMillis())))
-                .app_user("Nyaruko166")
+                .app_user("SD_38")
                 .amount(amount)
                 .description("GymTiger - Thanh Toán Đơn Hàng #" + random_id)
                 .bank_code("")
@@ -124,30 +105,11 @@ public class PaymentServiceImpl implements PaymentService {
 
         String jsonPost = gson.toJson(zaloPaymentRequest);
 
-//        System.out.println(zaloPaymentRequest.getItem());
-//        System.out.println(jsonPost);
-
-//        String data = order.get("app_id") + "|" + order.get("app_trans_id") + "|" + order.get("app_user") + "|"
-//                + order.get("amount") + "|" + order.get("app_time") + "|" + order.get("embed_data") + "|"
-//                + order.get("item");
-//        order.put("mac", HMACUtil.HMACSHA256Encode(ZaloPayConfig.key1, data));
-//
-//        System.out.println(order);
-
         CloseableHttpClient client = HttpClients.createDefault();
         HttpPost post = new HttpPost(ZaloPayConfig.endpointCreateOrder);
 
         StringEntity requestEntity = new StringEntity(jsonPost, ContentType.APPLICATION_JSON);
         post.setEntity(requestEntity);
-
-//        List<NameValuePair> params = new ArrayList<>();
-//        for (Map.Entry<String, Object> e : order.entrySet()) {
-//            params.add(new BasicNameValuePair(e.getKey(), e.getValue().toString()));
-//        }
-//        System.out.println(params);
-
-//        Content - Type:application / x - www - form - urlencoded
-//        post.setEntity(new UrlEncodedFormEntity(params));
 
         CloseableHttpResponse res = client.execute(post);
         BufferedReader rd = new BufferedReader(new InputStreamReader(res.getEntity().getContent()));

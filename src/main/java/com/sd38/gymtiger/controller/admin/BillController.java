@@ -1,16 +1,10 @@
 package com.sd38.gymtiger.controller.admin;
 
+import com.sd38.gymtiger.model.*;
 import com.sd38.gymtiger.repository.AccountRepository;
 import com.sd38.gymtiger.repository.BillDetailRepository;
 import com.sd38.gymtiger.dto.admin.BillDto;
-import com.sd38.gymtiger.model.Account;
-import com.sd38.gymtiger.model.Bill;
-import com.sd38.gymtiger.model.BillDetail;
-import com.sd38.gymtiger.model.PaymentMethod;
-import com.sd38.gymtiger.model.ProductDetail;
-import com.sd38.gymtiger.service.BillService;
-import com.sd38.gymtiger.service.PaymentMethodService;
-import com.sd38.gymtiger.service.ProductDetailService;
+import com.sd38.gymtiger.service.*;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -46,6 +40,12 @@ public class BillController {
 
     @Autowired
     private AccountRepository accountRepository;
+
+    @Autowired
+    private AddressService addressService;
+
+@Autowired
+private CustomerService customerService;
 
     @Autowired
     private BillDetailRepository billDetailRepository;
@@ -109,21 +109,22 @@ public class BillController {
     }
 
     @GetMapping("/detail/{id}")
-    public String getBillDetail(Model model, @PathVariable("id") Integer id, RedirectAttributes attributes) {
+    public String getBillDetail(Model model, @PathVariable("id") Integer id,Principal principal,RedirectAttributes attributes) {
         List<ProductDetail> listProductDetail = productDetailService.findAllActive();
         Bill bill = billService.getOneBill(id);
         if (bill != null){
+            Customer customer = customerService.findByEmail(principal.getName());
             List<BillDetail> lstBillDetails = billService.getLstDetailByBillId(id);
+            List<Address> listAddress = addressService.findAccountAddress(customer.getId());
             List<PaymentMethod> listPaymentMethod = paymentMethodService.getAllBillPaymentMethod(id);
             model.addAttribute("bill", bill);
             model.addAttribute("lstBillDetails", lstBillDetails);
             model.addAttribute("listProductDetail", listProductDetail);
             model.addAttribute("listPaymentMethod", listPaymentMethod);
-            return "admin/bill/bill-detail";
-        } else {
-            attributes.addFlashAttribute("error", "Không tìm thấy hoá đơn");
-            return "redirect:/tiger/bill";
+            model.addAttribute("listAddress", listAddress);
         }
+            return "admin/bill/bill-detail";
+
     }
 
     @RequestMapping(value = "/cancel-bill/{id}", method = {RequestMethod.PUT, RequestMethod.GET})
@@ -239,7 +240,7 @@ public class BillController {
         } else {
             attributes.addFlashAttribute("error", "Không thể xoá do hoá đơn cần có ít nhất 1 sản phẩm");
         }
-        return "redirect:/tiger/bill/detail/" + billDetail.getBill().getId();
+        return "redirect:/tiger/bill/" + billDetail.getBill().getId();
     }
 
     @RequestMapping(value = "/confirm-bill/{id}", method = {RequestMethod.PUT, RequestMethod.GET})
@@ -402,5 +403,11 @@ public class BillController {
                 .toUriString();
 
         billService.exportToExcel(response, listBill, exportUrl);
+    }
+
+
+    @GetMapping("/statusHistory")
+    public String getAllHistory(){
+        return null;
     }
 }

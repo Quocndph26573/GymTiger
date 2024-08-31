@@ -88,14 +88,15 @@ public class VoucherController {
 
         if ((code == null || code.isEmpty()) && status == null && (name == null || name.isEmpty()) && ngayTaoStart == null && ngayTaoEnd == null) {
             return "redirect:/tiger/voucher/page";
+        } else {
+            Page<VoucherSearchDTO> voucherSearchDTOPage = voucherService.searchVoucher(code, ngayTaoStart, ngayTaoEnd, status, name, page);
+            model.addAttribute("pageVoucher", voucherSearchDTOPage);
+            model.addAttribute("code", code);
+            model.addAttribute("status", status);
+            model.addAttribute("name", name);
+            model.addAttribute("ngayTaoStart", ngayTaoStart);
+            model.addAttribute("ngayTaoEnd", ngayTaoEnd);
+            return "admin/voucher/voucher";
         }
-        Page<VoucherSearchDTO> voucherSearchDTOPage = voucherService.searchVoucher(code, ngayTaoStart, ngayTaoEnd, status, name, page);
-        model.addAttribute("pageVoucher", voucherSearchDTOPage);
-        model.addAttribute("code", code);
-        model.addAttribute("status", status);
-        model.addAttribute("name", name);
-        model.addAttribute("ngayTaoStart", ngayTaoStart);
-        model.addAttribute("ngayTaoEnd", ngayTaoEnd);
-        return "admin/voucher/voucher";
     }
 }

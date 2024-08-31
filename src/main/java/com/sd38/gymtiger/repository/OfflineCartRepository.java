@@ -1,7 +1,3 @@
-/*
- *  © 2023 Nyaruko166
- */
-
 package com.sd38.gymtiger.repository;
 
 import com.sd38.gymtiger.model.OfflineCart;

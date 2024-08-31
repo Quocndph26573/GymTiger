@@ -8,12 +8,19 @@
 
     <div th:replace="~{/user/fragments::header}"></div>
     <!-- Cart Start -->
-    <div style="margin-top: 50px;
-                background: whitesmoke;
-                height: 150px ">
-        <h1 style="text-align:center; padding-top: 20px"><strong>Shopping Cart</strong></h1>
-
+    <!--     Page Header Start -->
+    <div class="container-fluid mb-5" style="background: #00aa88">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Giỏ hàng</h1>
+            <div class="d-inline-flex">
+                <p class="m-0"><a href="/home">Trang chủ</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0">Giỏ hàng</p>
+            </div>
+        </div>
     </div>
+    <!--     Page Header End -->
+
 
     <div class="container-fluid pt-5">
         <div th:if="${mess}">
@@ -121,6 +128,7 @@
                     <div class="card-header bg-secondary border-0">
                         <h4 class="font-weight-semi-bold m-0">Tổng quan giỏ hàng</h4>
                     </div>
+
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-3 pt-1">
                             <h6 class="font-weight-medium">Tổng tiền hàng</h6>

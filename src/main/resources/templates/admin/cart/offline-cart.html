@@ -1,6 +1,3 @@
-<!--
-  ~  © 2023 Nyaruko166
-  -->
 
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
@@ -166,7 +163,7 @@
                 </tr>
                 <tr>
                     <td class="noidung">Tổng giá trị:</td>
-                    <td><input type="number" class="nhapvao" th:field="*{price}" readonly></td>
+                    <td><input type="number" id="firstPrice" class="nhapvao" th:field="*{price}" readonly></td>
                 </tr>
                 <tr>
                     <td class="noidung">Voucher:</td>
@@ -193,7 +190,7 @@
                                             <tr th:each="k: ${listVoucher}" class="gachphai">
                                                 <td>[(${k.code})]</td>
                                                 <td>[(${k.name})]</td>
-                                                <td><a th:href="@{/tiger/pos/chonVoucher/{id}(id=${k.id})}" class="btn btn-primary" style="background-color: dodgerblue" th:onclick="return dachonHD()">Chọn</a></td>
+                                                <td><a th:href="@{/tiger/pos/chonVoucher/{id}(id=${k.id})}" class="btn btn-primary" style="background-color: dodgerblue" th:onclick="return dachonHD2([(${k.minimumPrice})])">Chọn</a></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -369,6 +366,23 @@
             return false;
         }
         else {
+            return true;
+        }
+    }
+
+    function dachonHD2(x) {
+        const kiemtraidHd = document.getElementById('idHdDuocChon').value;
+        if(!kiemtraidHd){
+            alert("Yêu cầu chọn hóa đơn");
+            return false;
+        }
+        else {
+            const tongTien = parseFloat(document.getElementById("firstPrice").value);
+            const giatrivoucher = parseFloat(x);
+            if (giatrivoucher>=tongTien){
+                alert("Hóa đơn có giá trị quá nhỏ để áp dụng hóa đơn này");
+                return false;
+            }
             return true;
         }
     }

@@ -1,12 +1,3 @@
-#!/usr/bin/env bash
-#
-# Usage
-# ---------------
-# 1. Clone second version of Bootstrap in sibling directory named `bs-docs`.
-# 2. Within `bs-docs` copy, switch to `gh-pages` branch.
-# 3. Pull latest, re-bundle, re-npm.
-# 4. Run script.
-
 red=$'\e[1;31m'
 green=$'\e[1;32m'
 #blue=$'\e[1;34m'

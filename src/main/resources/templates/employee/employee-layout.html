@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!--<head th:replace="/admin/fragments-admin::page_head('Admin page')">-->
+    <head th:replace="(~{/admin/fragments-admin::page_head('Admin page')})">
+
+    </head>
+
+<!--</head>-->
+<body>
+<div class="container-scroller">
+
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+            <a href="/admin/images/logo0.jpg">
+
+            </a>
+        </div>
+
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+            <button class="navbar-toggler navbar-toggler d-none d-lg-block navbar-dark align-self-center mr-3" type="button" data-toggle="minimize">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item dropdown d-none d-xl-inline-block">
+                    <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                        <span th:unless="${session.username == null}">Xin chào, <span th:text="${session.username}"></span></span>
+                        <img class="img-xs rounded-circle" th:src="@{/admin/images/tiger.png}" alt="Profile image">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                        <a class="dropdown-item mt-2">
+                            Quản lý tài khoản
+                        </a>
+                        <a class="dropdown-item">
+                            Đổi mật khẩu
+                        </a>
+                        <a class="dropdown-item" href="/shop">
+                            Trang bán hàng
+                        </a>
+                        <a class="dropdown-item"  href="/logout">
+                            Đăng xuất
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="icon-menu"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item nav-profile">
+                    <div class="nav-link">
+                        <div class="user-wrappe r">
+                            <div class="text-wrapper">
+                                <div>
+                                    <small class="" style="color:black; font-size: x-large"><strong>Dashboard</strong></small>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/tiger/pos}">
+                        <i class="menu-icon mdi mdi-sticker"></i>
+                        <span class="menu-title">Bán hàng tại quầy</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/tiger/bill}">
+                        <i class="menu-icon mdi mdi-sticker"></i>
+                        <span class="menu-title">Hoá đơn</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper" layout:fragment="content">
+                Content is Here!
+            </div>
+            <!-- content-wrapper ends -->
+
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+                <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2024
+              <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with
+              <i class="mdi mdi-heart text-danger"></i>
+            </span>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+
+    </div>
+
+    <!-- page-body-wrapper ends -->
+</div>
+</body>
+</html>

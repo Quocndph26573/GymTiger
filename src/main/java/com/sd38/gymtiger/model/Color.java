@@ -14,6 +14,7 @@ import java.util.Date;
 @Builder
 public class Color {
 
+    public static java.awt.Color black;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")

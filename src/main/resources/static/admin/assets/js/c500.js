@@ -1,6 +1,3 @@
-/*
- *  © 2023 Nyaruko166
- */
 
 const stackContainer = document.querySelector('.stack-container');
 const cardNodes = document.querySelectorAll('.card-container');

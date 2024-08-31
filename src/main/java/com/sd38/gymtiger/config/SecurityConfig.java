@@ -1,7 +1,3 @@
-/*
- *  © 2023 Nyaruko166
- */
-
 package com.sd38.gymtiger.config;
 
 import com.sd38.gymtiger.security.CustomAccessDeniedHandler;
@@ -54,7 +50,7 @@ public class SecurityConfig {
 
         http.csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests(req -> {
             //Allowing Resources
-            req.requestMatchers("/*.css", "/*.js", "/assets/**", "/admin/**", "/user/**").permitAll();
+            req.requestMatchers("/*.css", "/*.js", "/assets/**", "/admin/**", "/employee/**", "/user/**").permitAll();
 
             //Testing purpose
             req.requestMatchers("/login", "/register", "/mail").permitAll();

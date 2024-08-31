@@ -1,25 +1,32 @@
 
 package com.sd38.gymtiger.controller.admin;
 
+import com.lowagie.text.*;
+import com.lowagie.text.pdf.PdfPCell;
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
 import com.sd38.gymtiger.model.*;
 import com.sd38.gymtiger.repository.ColorRepository;
 import com.sd38.gymtiger.repository.MaterialRepository;
 import com.sd38.gymtiger.repository.SizeRepository;
 import com.sd38.gymtiger.service.*;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.security.Principal;
 import java.sql.Date;
 import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
+
 
 @Controller
 @RequestMapping("/tiger/pos")
@@ -95,7 +102,7 @@ public class OfflineCartController {
         }
         else {
             model.addAttribute("voucherInfo", bill.getVoucher().getName());
-            model.addAttribute("giatrivoucher", Double.parseDouble(String.valueOf(bill.getVoucher().getValue()))+"%");
+            model.addAttribute("giatrivoucher", Double.parseDouble(String.valueOf(bill.getVoucher().getValue()))+"vnd");
         }
 
         hoadoncho = bill;
@@ -255,7 +262,7 @@ public class OfflineCartController {
         //productDetailService.simplizedUpdate(productDetail.getId(), productDetail);
 
         detail.setBill(billService.getOneBill(bill.getId()));
-        detail.setPrice(productDetail.getPrice());
+        detail.setPrice(productDetail.getPriceDiscount());
         detail.setProductDetail(productDetail);
 //        System.out.println(detail.getBill()+" - "+detail.getProductDetail().getProduct().getName()+" - "
 //            +detail.getPrice()+" - "+detail.getQuantity()
@@ -279,7 +286,7 @@ public class OfflineCartController {
 
         billService.updateBillDetail(hdct_dc_doi, id);
         productDetailService.simplizedUpdate(spthaydoi.getId(), spthaydoi);
-
+        huyVcr();
         tinhTongTien();
         return "redirect:/tiger/pos/chonHD/"+bill.getId();
     };
@@ -287,6 +294,7 @@ public class OfflineCartController {
     @RequestMapping("/xoa-hdtq/{id}")
     public String xoaBillDetail(@PathVariable("id")Integer id){
         huydonhang(id);
+        huyVcr();
         tinhTongTien();
         return "redirect:/tiger/pos/chonHD/"+bill.getId();
     }
@@ -355,7 +363,7 @@ public class OfflineCartController {
             tinhKm = tongtien;
         }
         else {
-            tinhKm = tongtien - (tongtien/100*Double.parseDouble(String.valueOf(hoadon.getVoucher().getValue())));
+            tinhKm = tongtien - Double.parseDouble(String.valueOf(hoadon.getVoucher().getValue()));
         }
 
         hoadon.setPrice(BigDecimal.valueOf(tongtien));
@@ -372,5 +380,97 @@ public class OfflineCartController {
         );
         productDetailService.simplizedUpdate(sp_duoc_tra.getId(), sp_duoc_tra);
         billService.deleteBillDetail(cthd_bi_xoa);
+    }
+
+    public void pdfHeader(PdfPTable table){
+        PdfPCell cell = new PdfPCell();
+        cell.setBackgroundColor(java.awt.Color.lightGray);
+        cell.setPadding(5);
+
+        Font font = FontFactory.getFont(FontFactory.HELVETICA);
+        font.setColor(java.awt.Color.white);
+
+        cell.setPhrase(new Phrase("Sản phẩm", font));
+        table.addCell(cell);
+
+        cell.setPhrase(new Phrase("Số lượng", font));
+        table.addCell(cell);
+
+        cell.setPhrase(new Phrase("Giá", font));
+        table.addCell(cell);
+    };
+
+    public void writeDataPdf(PdfPTable table, Integer idHD){
+        for (BillDetail g: billService.getLstDetailByBillId(idHD)){
+            table.addCell(g.getProductDetail().getProduct().getName()+"/"+g.getProductDetail().getSize().getName()+"/"+g.getProductDetail().getColor().getName());
+            table.addCell(String.valueOf(g.getQuantity()));
+            table.addCell(String.valueOf(g.getPrice()));
+        }
+    }
+
+    public void preparepdf(HttpServletResponse response, Integer id) throws IOException {
+        String maHD = billService.getOneBill(id).getCode();
+        Document document = new Document(PageSize.A4);
+        PdfWriter.getInstance(document, response.getOutputStream());
+
+        document.open();
+        Font font = FontFactory.getFont(FontFactory.TIMES_ROMAN);
+
+        font.setSize(18);
+        font.setColor(Color.black);
+
+        Paragraph p = new Paragraph("Hóa đơn: "+maHD, font);
+        p.setAlignment(Paragraph.ALIGN_CENTER);
+        document.add(p);
+
+        Paragraph p1 = new Paragraph("Thời gian: "+ngayhomnay, font);
+        p.setAlignment(Paragraph.ALIGN_RIGHT);
+        document.add(p1);
+
+        Paragraph p2 = new Paragraph("Danh sách mua hàng: ", font);
+        p.setAlignment(Paragraph.ALIGN_CENTER);
+        document.add(p2);
+
+        PdfPTable table = new PdfPTable(3);
+        table.setWidthPercentage(100f);
+        table.setWidths(new float[]{3.3f, 3.3f, 3.3f});
+        table.setSpacingBefore(10);
+
+        pdfHeader(table);
+        writeDataPdf(table, id);
+
+        document.add(table);
+
+        Font priceFont =  FontFactory.getFont(FontFactory.TIMES_ROMAN);
+        priceFont.setColor(java.awt.Color.black);
+
+        Paragraph tienGoc = new Paragraph("Tổng hóa đơn: "+billService.getOneBill(id).getPrice(), priceFont);
+        Paragraph tienThucTe = new Paragraph("Thanh toán: "+billService.getOneBill(id).getTotalPrice(), priceFont);
+        Paragraph khuyenMai = new Paragraph("Giảm giá: 0", priceFont);
+        try {
+            if (billService.getOneBill(id).getVoucher()!=null){
+                khuyenMai = new Paragraph("Giảm giá: "+billService.getOneBill(id).getVoucher().getValue(), priceFont);
+            }
+        }catch (Exception e){}
+
+        document.add(tienGoc);
+        document.add(khuyenMai);
+        document.add(tienThucTe);
+
+        document.close();
+    }
+
+    @RequestMapping("/print-pdf/{id}")
+    public void inHD(@PathVariable("id") Integer id, HttpServletResponse response){
+        try {
+            response.setContentType("application/pdf");
+            String headerKey = "Content-Disposition";
+            String headerValue = "attachment; filename=the_bill.pdf";
+
+            response.setHeader(headerKey, headerValue);
+            preparepdf(response, id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

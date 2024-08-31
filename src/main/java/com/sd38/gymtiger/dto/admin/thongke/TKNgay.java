@@ -7,7 +7,4 @@ public interface TKNgay {
 
     BigDecimal getDoanhThu();
 
-    Integer getSoLuongHuy();
-
-
 }

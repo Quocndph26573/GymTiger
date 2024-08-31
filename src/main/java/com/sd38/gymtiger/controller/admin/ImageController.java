@@ -16,7 +16,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/nova")
+@RequestMapping("/tiger")
 public class ImageController {
     @Autowired
     private ImageService imageService;

@@ -60,7 +60,10 @@
             </div>
             <button type="submit" class="btn btn-primary m-1"><i class="fa fa-search"></i> Tìm kiếm</button>
             <a th:href="@{/tiger/bill}" class="btn btn-secondary m-1">Hủy</a>
-<!--            <button type="button" class="btn btn-success m-1" onclick="exportToExcel()"><i class="far fa-file-excel"></i> Export Excel</button>-->
+
+<!--            Export Excel-->
+            <button type="button" class="btn export-btn btn-success m-1" >
+                <i class="far fa-file-excel"></i> Export Excel</button>
         </div>
     </form>
 
@@ -97,6 +100,7 @@
             }
         </script>
     </div>
+
     <table class="table table-hover border my-3" style="cursor: pointer" id="billTable">
         <thead class="thead-dark">
         <tr>
@@ -225,11 +229,12 @@
     </div>
 
     <script th:inline="javascript">
+
         // check ngày hợp lệ
         $(document).ready(function () {
             $('#form-search').on('submit', function (e) {
-                if($('#ngayTaoStart').val() && $('#ngayTaoEnd').val()) {
-                    if( $('#ngayTaoEnd').val() < $('#ngayTaoStart').val()) {
+                if ($('#ngayTaoStart').val() && $('#ngayTaoEnd').val()) {
+                    if ($('#ngayTaoEnd').val() < $('#ngayTaoStart').val()) {
                         Swal.fire({
                             title: "Lỗi",
                             text: `Ngày kết thúc phải lớn hơn ngày bắt đầu`,
@@ -244,16 +249,29 @@
             //button hủy đơn
             $('.cancel-btn').on('click', function (e) {
                 e.preventDefault();
+                // Create a text area for the reason
+                const reasonTextArea = document.createElement('textarea');
+                reasonTextArea.placeholder = 'Nhập lý do hủy đơn';
+                reasonTextArea.style.width = '100%';
+                reasonTextArea.style.height = '80px';
+
                 Swal.fire({
                     title: "Xác nhận?",
                     text: `Bạn chắc chắn muốn hủy đơn này?`,
                     icon: "warning",
                     showCancelButton: true,
+                    html: `<p>Lý do hủy đơn:</p>
+                       ${reasonTextArea.outerHTML}`,
                     cancelButtonText: 'Hủy',
                     confirmButtonText: 'Xác nhận',
                     reverseButtons: true
                 }).then((result) => {
                     if (result.isConfirmed) {
+                        const reason = reasonTextArea.value;
+
+                        // Add the reason to the URL if needed
+                        const url = $(this).attr('href');
+                        const updatedUrl = reason ? `${url}?reason=${encodeURIComponent(reason)}` : url;
                         window.location.href = $(this).attr('href');
                     }
                 })
@@ -262,48 +280,46 @@
             //button xác nhận đơn hàng
             $('.confirm-btn').on('click', function (e) {
                 e.preventDefault();
-                var moTa = "";
+
+                const reasonTextArea = document.createElement('textarea');
+                reasonTextArea.placeholder = 'Nhập ghi chú';
+                reasonTextArea.style.width = '100%';
+                reasonTextArea.style.height = '80px';
+
                 Swal.fire({
                     title: "Xác nhận?",
                     text: "Xác nhận đơn hàng này?",
-                    html: `Mô tả: <input type="text" id="moTaInput" placeholder="Nhập mô tả (tùy chọn)">`,
+                    html: `\`<p>Ghi chú:</p>
+                       ${reasonTextArea.outerHTML}\``,
                     icon: "warning",
                     showCancelButton: true,
                     cancelButtonText: 'Hủy',
                     confirmButtonText: 'Xác nhận',
                     reverseButtons: true,
-                    preConfirm: () => {
-                    moTa = document.getElementById('moTaInput').value;
-                }
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        if (moTa) {
-                            // Nếu có mô tả, thêm nó vào thông báo
-                            Swal.fire({
-                                title: 'Xác nhận!',
-                                text: `Đơn hàng đã được xác nhận! \n\nMô tả: ${moTa}`,
-                                icon: 'success'
-                            });
-                            window.location.href = $(this).attr('href');
-                    }
-                            // else {
-                    //     Swal.fire({
-                    //         title: 'Xác nhận!',
-                    //         text: `Đơn hàng đã được xác nhận!`,
-                    //         icon: 'success'
-                    //         });
-                    //     }
-                    // }
+                        const reason = reasonTextArea.value;
 
-                }})
+                        // Add the reason to the URL if needed
+                        const url = $(this).attr('href');
+                        const updatedUrl = reason ? `${url}?reason=${encodeURIComponent(reason)}` : url;
+                        window.location.href = $(this).attr('href');
+                    }
+                })
             });
 
             //button xác nhân giao đon hàng
             $('.shipping-btn').on('click', function (e) {
                 e.preventDefault();
+                const reasonTextArea = document.createElement('textarea');
+                reasonTextArea.placeholder = 'Nhập ghi chú';
+                reasonTextArea.style.width = '100%';
+                reasonTextArea.style.height = '80px';
                 Swal.fire({
                     title: "Xác nhận?",
                     text: `Xác nhận giao đơn này?`,
+                    html: `\`<p>Ghi chú:</p>
+                       ${reasonTextArea.outerHTML}\``,
                     icon: "warning",
                     showCancelButton: true,
                     cancelButtonText: 'Hủy',
@@ -311,6 +327,11 @@
                     reverseButtons: true
                 }).then((result) => {
                     if (result.isConfirmed) {
+                        const reason = reasonTextArea.value;
+
+                        // Add the reason to the URL if needed
+                        const url = $(this).attr('href');
+                        const updatedUrl = reason ? `${url}?reason=${encodeURIComponent(reason)}` : url;
                         window.location.href = $(this).attr('href');
                     }
                 })
@@ -318,9 +339,15 @@
 
             $('.complete-btn').on('click', function (e) {
                 e.preventDefault();
+                const reasonTextArea = document.createElement('textarea');
+                reasonTextArea.placeholder = 'Nhập ghi chú';
+                reasonTextArea.style.width = '100%';
+                reasonTextArea.style.height = '80px';
                 Swal.fire({
                     title: "Xác nhận?",
                     text: `Xác nhận đã giao thành công đơn này?`,
+                    html: `\`<p>Ghi chú:</p>
+                       ${reasonTextArea.outerHTML}\``,
                     icon: "warning",
                     showCancelButton: true,
                     cancelButtonText: 'Hủy',
@@ -328,50 +355,57 @@
                     reverseButtons: true
                 }).then((result) => {
                     if (result.isConfirmed) {
+                        const reason = reasonTextArea.value;
+
+                        // Add the reason to the URL if needed
+                        const url = $(this).attr('href');
+                        const updatedUrl = reason ? `${url}?reason=${encodeURIComponent(reason)}` : url;
                         window.location.href = $(this).attr('href');
                     }
                 })
             });
 
+
+            var lastClickTime = 0;
+            var doubleClickDelay = 300;
+
+            var clickableRows = document.querySelectorAll(".clickable-row");
+
+            clickableRows.forEach(function (row) {
+                row.addEventListener("click", function (e) {
+                    var currentTime = new Date().getTime();
+                    if (currentTime - lastClickTime < doubleClickDelay) {
+                        // Đây là double click
+                        var maHoaDon = row.getAttribute("data-maHoaDon");
+                        window.location.href = "/tiger/bill/detail/" + maHoaDon;
+                    }
+                    lastClickTime = currentTime;
+                });
+            });
+
+            $('.export-btn').on('click', function (e) {
+                e.preventDefault();
+                var page = document.getElementById("pageValue").value;
+                var sort = document.getElementById("sortValue").value;
+                var ngayTaoStart = document.getElementById("ngayTaoStart").value;
+                var ngayTaoEnd = document.getElementById("ngayTaoEnd").value;
+
+                Swal.fire({
+                    title: "Xác nhận?",
+                    text: `Xác nhận export file excel?`,
+                    icon: "warning",
+                    showCancelButton: true,
+                    cancelButtonText: 'Hủy',
+                    confirmButtonText: 'Xác nhận',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        var exportUrl = `/tiger/bill/export-bill?page=${page}&sort=${sort}&ngayTaoStart=${ngayTaoStart}&ngayTaoEnd=${ngayTaoEnd}`;
+                        window.location.href = exportUrl;
+                    }
+                });
+            });
         })
-        var lastClickTime = 0;
-        var doubleClickDelay = 300;
-
-        var clickableRows = document.querySelectorAll(".clickable-row");
-
-        clickableRows.forEach(function(row) {
-            row.addEventListener("click", function(e) {
-                var currentTime = new Date().getTime();
-                if (currentTime - lastClickTime < doubleClickDelay) {
-                    // Đây là double click
-                    var maHoaDon = row.getAttribute("data-maHoaDon");
-                    window.location.href = "/tiger/bill/detail/" + maHoaDon;
-                }
-                lastClickTime = currentTime;
-            });
-        });
-
-        function exportToExcel() {
-            var page = document.getElementById("pageValue").value;
-            var sort = document.getElementById("sortValue").value;
-            var ngayTaoStart = document.getElementById("ngayTaoStart").value;
-            var ngayTaoEnd = document.getElementById("ngayTaoEnd").value;
-
-            Swal.fire({
-                title: "Xác nhận?",
-                text: `Xác nhận export file excel?`,
-                icon: "warning",
-                showCancelButton: true,
-                cancelButtonText: 'Hủy',
-                confirmButtonText: 'Xác nhận',
-                reverseButtons: true
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    var exportUrl = `/tiger/bill/export-bill?page=${page}&sort=${sort}&ngayTaoStart=${ngayTaoStart}&ngayTaoEnd=${ngayTaoEnd}`;
-                    window.location.href = exportUrl;
-                }
-            });
-        }
 
     </script>
 

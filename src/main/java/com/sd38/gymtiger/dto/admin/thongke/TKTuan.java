@@ -8,6 +8,5 @@ public interface TKTuan {
 
     BigDecimal getDoanhThu();
 
-    Integer getSoLuongHuy();
 
 }

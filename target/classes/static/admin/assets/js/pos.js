@@ -32,7 +32,7 @@ function onScanSuccess(decodedText) {
 
         // console.log(billId);
 
-        fetch("/nova/pos/add", {
+        fetch("/tiger/pos/add", {
             method: "POST",
             body: JSON.stringify({
                 billId: billId,
@@ -57,12 +57,12 @@ function onScanSuccess(decodedText) {
 }
 
 function updateOutput() {
-    $.post("/nova/pos/frag").done(function (fragment) {
+    $.post("/tiger/pos/frag").done(function (fragment) {
         // console.log(fragment);
         $("#output").replaceWith(fragment);
     });
 
-    $.post("/nova/pos/frag-checkout").done(function (fragment_checkout) {
+    $.post("/tiger/pos/frag-checkout").done(function (fragment_checkout) {
         // console.log(fragment);
         // console.log('change checkout')
         $("#output_checkout").replaceWith(fragment_checkout);
@@ -71,7 +71,7 @@ function updateOutput() {
 
 function searchAndReplace() {
     let keyword = document.getElementById('keyword').value;
-    let url = "/nova/pos/api/filter?keyword=" + keyword;
+    let url = "/tiger/pos/api/filter?keyword=" + keyword;
 
     $.post(url).done(function (fragment_modal) {
         // console.log(fragment);
@@ -82,7 +82,7 @@ function searchAndReplace() {
 function searchAndReplaceProduct() {
     let keyword = document.getElementById('keywordProduct').value;
     // console.log(keyword)
-    let url = "/nova/pos/api/productFilter?keyword=" + keyword;
+    let url = "/tiger/pos/api/productFilter?keyword=" + keyword;
 
     $.post(url).done(function (fragment_product) {
         // console.log(fragment_product);
@@ -126,7 +126,7 @@ async function addItems(obj) {
             billId = urlParam.get('billId');
         }
 
-        fetch("/nova/pos/add", {
+        fetch("/tiger/pos/add", {
             method: "POST",
             body: JSON.stringify({
                 billId: billId,
@@ -198,7 +198,7 @@ function thanhToan() {
         let khachPhaiTra = document.getElementById('khachPhaiTra').innerText.match(/\d+/);
         let khachDua = document.getElementById('khachDua').value;
         if (Number(khachDua) >= Number(khachPhaiTra[0])) {
-            fetch("/nova/pos/check-legit")
+            fetch("/tiger/pos/check-legit")
                 .then(function (response) {
                     if (response.status === 418) {
                         Swal.fire({
@@ -243,7 +243,7 @@ function openPopUp() {
     let options = 'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left;
 
     // Mở cửa sổ pop-up và điều hướng đến liên kết "/nova/pos/checkout"
-    window.open('/nova/pos/checkout', '_blank', options);
+    window.open('/tiger/pos/checkout', '_blank', options);
 }
 
 function showImagePopup(imageDataURI) {
@@ -291,7 +291,7 @@ function updateCart(obj) {
             billId = urlParam.get('billId');
         }
 
-        fetch("/nova/pos/update", {
+        fetch("/tiger/pos/update", {
             method: "POST",
             body: JSON.stringify({
                 billId: billId,

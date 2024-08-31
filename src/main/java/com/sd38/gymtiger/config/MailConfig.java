@@ -25,5 +25,4 @@ public class MailConfig {
         int randomNumber = random.nextInt(max - min + 1) + min;
         return String.format("%06d", randomNumber);
     }
-
 }

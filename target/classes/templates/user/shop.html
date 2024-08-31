@@ -77,81 +77,8 @@
                         </div>
 
                         <!-- Price Start -->
-                                            <div class="border-bottom mb-4 pb-4 mt-5">
-                                                <h5 class="font-weight-semi-bold mb-4">Giá</h5>
-                                                <div th:if="${price == null}">
-                                                    <select class="form-control combobox-select" name="price">
-                                                        <option value="">Tất cả</option>
-                                                        <option value="1">₫0 ~ ₫100.000</option>
-                                                        <option value="2">₫100.000 ~ ₫500.000</option>
-                                                        <option value="3">₫500.000 ~ ₫1.000.000</option>
-                                                        <option value="4">₫1.000.000 ~ ₫5.000.000</option>
-                                                        <option value="5">₫5.000.000 ~ ₫10.000.000</option>
-                                                        <option value="6">₫10.000.000 ~ ₫50.000.000</option>
-                                                        <option value="7">₫50.000.000 ~ ₫100.000.000</option>
-                                                        <option value="8">₫100.000.000 ~ ₫500.000.000</option>
-                                                        <option value="9">₫500.000.000 ~ ₫2.000.000.000</option>
-                                                    </select>
-                                                </div>
-                                                <div th:if="${price != null}">
-                                                    <select class="form-control combobox-select" name="price">
-                                                        <option value="">Tất cả</option>
-                                                        <option value="1" th:selected="${price == 1}">₫0 ~ ₫100.000</option>
-                                                        <option value="2" th:selected="${price == 2}">₫100.000 ~ ₫500.000</option>
-                                                        <option value="3" th:selected="${price == 3}">₫500.000 ~ ₫1.000.000</option>
-                                                        <option value="4" th:selected="${price == 4}">₫1.000.000 ~ ₫5.000.000</option>
-                                                        <option value="5" th:selected="${price == 5}">₫5.000.000 ~ ₫10.000.000</option>
-                                                        <option value="6" th:selected="${price == 6}">₫10.000.000 ~ ₫50.000.000</option>
-                                                        <option value="7" th:selected="${price == 7}">₫50.000.000 ~ ₫100.000.000</option>
-                                                        <option value="8" th:selected="${price == 8}">₫100.000.000 ~ ₫500.000.000</option>
-                                                        <option value="9" th:selected="${price == 9}">₫500.000.000 ~ ₫2.000.000.000</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
                         <div class="border-bottom mb-4 pb-4 mt-5">
                             <h5 class="font-weight-semi-bold mb-4">Giá</h5>
-                                                    <div slider id="slider-distance">
-                                                        <div>
-                                                            <div inverse-left style="width:100%;"></div>
-                                                            <div inverse-right style="width:100%;"></div>
-                                                            <div range style="left:0%;right:0%;"></div>
-                                                            <span thumb style="left:0%;"></span>
-                                                            <span thumb style="left:100%;"></span>
-                                                            <div sign style="left:0%;">
-                                                                <span id="valueMin">₫0</span>
-                                                            </div>
-                                                            <div sign style="left:100%;">
-                                                                <span id="valueMax">₫10.000.000</span>
-                                                            </div>
-                                                        </div>
-                                                        <input type="range" id="priceMin" tabindex="0" value="1" max="10000000" name="priceMin" min="0" step="1000" oninput="
-                                                        this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
-                                                        var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
-                                                        var children = this.parentNode.childNodes[1].childNodes;
-                                                        children[1].style.width=value+'%';
-                                                        children[5].style.left=value+'%';
-                                                        children[7].style.left=value+'%';children[11].style.left=value+'%';
-                                                        var formatter = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND', currencyDisplay: 'narrowSymbol' });
-                                                        var formattedValue = formatter.format(this.value);
-                                                        children[11].childNodes[1].innerText='₫' + formattedValue.replaceAll('₫', '')" />
-
-                                                        <input type="range" th:id="priceMax" tabindex="0" value="10000000" max="10000000" name="priceMax" min="0" step="1000" oninput="
-                                                        this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
-                                                        var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
-                                                        var children = this.parentNode.childNodes[1].childNodes;
-                                                        children[3].style.width=(100-value)+'%';
-                                                        children[5].style.right=(100-value)+'%';
-                                                        children[9].style.left=value+'%';children[13].style.left=value+'%';
-                                                        var formatter = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND', currencyDisplay: 'narrowSymbol' });
-                                                        var formattedValue = formatter.format(this.value);
-                                                        children[13].childNodes[1].innerText='₫' + formattedValue.replaceAll('₫', '')" />
-                                                    </div>
-                                                    <div>
-                                                        <div th:text="${priceMin}"></div>
-                                                        <div th:text="${priceMin}"></div>
-                                                    </div>
-
                             <div class="custom-wrapper">
                                 <div class="price-input">
                                     <div class="price-field">
@@ -569,7 +496,7 @@
                                             <img class="img-fluid w-100" th:src="@{'/image/product/' + ${product.id}}" alt="">
                                             <div class="product-action">
                                                 <a class="btn btn-detail-home" th:href="@{'/product-detail/' + ${product.id}}">
-                                                    <i class="fa-solid fa-eye" style="color: #D19C97;"></i>
+                                                    <i class="fa-solid fa-eye" style="color: #00be60;"></i>
                                                 </a>
                                             </div>
                                         </div>
@@ -586,70 +513,69 @@
                                                     <span th:text="'₫' + ${#numbers.formatDecimal(product.priceMin.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
                                                 </div>
                                             </div>
+
                                             <div th:if="${product.value != null}" class="d-flex align-items-center justify-content-center mt-2">
-                                                <div class="d-flex justify-content-center price-discout" th:if="${product.priceMax != product.priceMin}">
-                                                    <span th:text="'₫' + ${#numbers.formatDecimal(product.priceMin.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
-                                                    <span class="ml-1 mr-1"> ~ </span>
-                                                    <span th:text="'₫' + ${#numbers.formatDecimal(product.priceMax.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
-                                                </div>
-                                                <div class="d-flex justify-content-center price" th:if="${product.priceMax != product.priceMin}">
-                                                    <span th:text="'₫' + ${#numbers.formatDecimal(product.priceDiscountMin.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
-                                                    <span class="ml-1 mr-1"> ~ </span>
-                                                    <span th:text="'₫' + ${#numbers.formatDecimal(product.priceDiscountMax.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
+
+                                                <div>
+                                                    <div class="d-flex justify-content-center price-discout" th:if="${product.priceMax != product.priceMin}">
+                                                        <span th:text="'₫' + ${#numbers.formatDecimal(product.priceMin.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
+                                                        <span class="ml-1 mr-1"> ~ </span>
+                                                        <span th:text="'₫' + ${#numbers.formatDecimal(product.priceMax.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
+                                                    </div>
+
+                                                    <div class="d-flex justify-content-center price" th:if="${product.priceMax != product.priceMin}">
+                                                        <span th:text="'₫' + ${#numbers.formatDecimal(product.priceDiscountMin.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
+                                                        <span class="ml-1 mr-1"> ~ </span>
+                                                        <span th:text="'₫' + ${#numbers.formatDecimal(product.priceDiscountMax.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
+                                                    </div>
                                                 </div>
 
-                                                <div class="d-flex justify-content-center price-discout" th:if="${product.priceMax == product.priceMin}">
-                                                    <span th:text="'₫' + ${#numbers.formatDecimal(product.priceMin.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
+                                                <div>
+                                                    <div class="d-flex justify-content-center price-discout" th:if="${product.priceMax == product.priceMin}">
+                                                        <span th:text="'₫' + ${#numbers.formatDecimal(product.priceMin.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
+                                                    </div>
+                                                    <div class="d-flex justify-content-center price" th:if="${product.priceMax == product.priceMin}">
+                                                        <span th:text="'₫' + ${#numbers.formatDecimal(product.priceDiscountMin.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
+                                                    </div>
                                                 </div>
-                                                <div class="d-flex justify-content-center price" th:if="${product.priceMax == product.priceMin}">
-                                                    <span th:text="'₫' + ${#numbers.formatDecimal(product.priceDiscountMin.stripTrailingZeros().toPlainString(), 0, 'COMMA', 0, 'POINT')}"></span>
-                                                </div>
+
+
                                             </div>
-                                            <div class="d-flex align-items-center justify-content-center mb-1">
-                                                <small class="fas fa-star text-primary"></small>
-                                                <small class="fas fa-star text-primary"></small>
-                                                <small class="fas fa-star text-primary"></small>
-                                                <small class="fas fa-star-half-alt text-primary"></small>
-                                                <small class="far fa-star text-primary"></small>
-                                                <small> (99)</small>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                    <div class="d-flex justify-content-center align-items-center">
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination">
-                                <li class="page-item" th:classappend="${pageProductShopResponse.getNumber() + 1 > 1 ? '' : 'disabled'}">
-                                    <a class="page-link" th:href="@{|?page=0&productNameSearch=${productNameSearch == null ? '' : productNameSearch}&status=${status == null ? '' : status}&sort=${sort == null ? '' : sort}&priceMin=${priceMin == null ? '' : priceMin}&priceMax=${priceMax == null ? '' : priceMax}${listColorId == null ? '' : pageListColor}${listSizeId == null ? '' : pageListSize}${listCategoryId == null ? '' : pageListCategory}${listBrandId == null ? '' : pageListBrand}${listMaterialId == null ? '' : pageListMaterial}${listFormId == null ? '' : pageListForm}|}" aria-label="First">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item" th:classappend="${pageProductShopResponse.getNumber() + 1 > 1 ? '' : 'disabled'}">
-                                    <a class="page-link" th:href="@{|?page=${pageProductShopResponse.getNumber() - 1}&productNameSearch=${productNameSearch == null ? '' : productNameSearch.trim()}&status=${status == null ? '' : status}&sort=${sort == null ? '' : sort}&priceMin=${priceMin == null ? '' : priceMin}&priceMax=${priceMax == null ? '' : priceMax}${listColorId == null ? '' : pageListColor}${listSizeId == null ? '' : pageListSize}${listCategoryId == null ? '' : pageListCategory}${listBrandId == null ? '' : pageListBrand}${listMaterialId == null ? '' : pageListMaterial}${listFormId == null ? '' : pageListForm}|}" aria-label="Previous">
-                                        <span aria-hidden="true">&lsaquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active" aria-current="page">
-                                    <span class="page-link" th:text="${pageProductShopResponse.getNumber() + 1}"></span>
-                                </li>
-                                <li class="page-item disabled"><a class="page-link" href="#">/</a></li>
-                                <li class="page-item disabled"><a class="page-link" href="#" th:text="${pageProductShopResponse.getTotalPages()}"></a></li>
-                                <li class="page-item" th:classappend="${pageProductShopResponse.getNumber() + 1 lt pageProductShopResponse.getTotalPages() ? '' : 'disabled'}">
-                                    <a class="page-link" th:href="@{|?page=${pageProductShopResponse.getNumber()+1}&productNameSearch=${productNameSearch == null ? '' : productNameSearch.trim()}&status=${status == null ? '' : status}&sort=${sort == null ? '' : sort}&priceMin=${priceMin == null ? '' : priceMin}&priceMax=${priceMax == null ? '' : priceMax}${listColorId == null ? '' : pageListColor}${listSizeId == null ? '' : pageListSize}${listCategoryId == null ? '' : pageListCategory}${listBrandId == null ? '' : pageListBrand}${listMaterialId == null ? '' : pageListMaterial}${listFormId == null ? '' : pageListForm}|}" aria-label="Next">
-                                        <span aria-hidden="true">&rsaquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item" th:classappend="${pageProductShopResponse.getNumber() + 1 lt pageProductShopResponse.getTotalPages() ? '' : 'disabled'}">
-                                    <a class="page-link" th:href="@{|?page=${pageProductShopResponse.getTotalPages() - 1}&productNameSearch=${productNameSearch == null ? '' : productNameSearch}&status=${status == null ? '' : status}&sort=${sort == null ? '' : sort}&priceMin=${priceMin == null ? '' : priceMin}&priceMax=${priceMax == null ? '' : priceMax}${listColorId == null ? '' : pageListColor}${listSizeId == null ? '' : pageListSize}${listCategoryId == null ? '' : pageListCategory}${listBrandId == null ? '' : pageListBrand}${listMaterialId == null ? '' : pageListMaterial}${listFormId == null ? '' : pageListForm}|}" aria-label="Last">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                        <div class="col-12 pb-1">
+                            <!--                    Pagination-->
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div th:if="${pageProductShopResponse.getNumber() + 1 > 1}" class="btn btn-pagination mr-1">
+                                    <a th:href="@{|?page=0&productNameSearch=${productNameSearch == null ? '' : productNameSearch}&status=${status == null ? '' : status}&sort=${sort == null ? '' : sort}&priceMin=${priceMin == null ? '' : priceMin}&priceMax=${priceMax == null ? '' : priceMax}${listColorId == null ? '' : pageListColor}${listSizeId == null ? '' : pageListSize}${listCategoryId == null ? '' : pageListCategory}${listBrandId == null ? '' : pageListBrand}${listMaterialId == null ? '' : pageListMaterial}${listFormId == null ? '' : pageListForm}|}">
+                                        </i><i style="color: white" class="fa-solid fa-backward-fast"></i></a>
+                                </div>
+                                <div th:if="${pageProductShopResponse.getNumber() + 1 > 1}" class="btn btn-pagination mr-1">
+                                    <a th:href="@{|?page=${pageProductShopResponse.getNumber() - 1}&productNameSearch=${productNameSearch == null ? '' : productNameSearch.trim()}&status=${status == null ? '' : status}&sort=${sort == null ? '' : sort}&priceMin=${priceMin == null ? '' : priceMin}&priceMax=${priceMax == null ? '' : priceMax}${listColorId == null ? '' : pageListColor}${listSizeId == null ? '' : pageListSize}${listCategoryId == null ? '' : pageListCategory}${listBrandId == null ? '' : pageListBrand}${listMaterialId == null ? '' : pageListMaterial}${listFormId == null ? '' : pageListForm}|}">
+                                        <i style="color: white" class="fa-solid fa-left-long"></i></a>
+                                </div>
+                                <div class="btn btn-pagination d-flex">
+                                    <div style="color: white;" th:text="${pageProductShopResponse.getNumber() + 1}"></div>
+                                    <span style="color: white;">/</span>
+                                    <div style="color: white;" th:text="${pageProductShopResponse.getTotalPages()}"></div>
+                                </div>
+                                <div th:if="${pageProductShopResponse.getNumber() + 1 lt pageProductShopResponse.getTotalPages()}"
+                                     class="btn btn-pagination ml-1">
+                                    <a th:href="@{|?page=${pageProductShopResponse.getNumber()+1}&productNameSearch=${productNameSearch == null ? '' : productNameSearch.trim()}&status=${status == null ? '' : status}&sort=${sort == null ? '' : sort}&priceMin=${priceMin == null ? '' : priceMin}&priceMax=${priceMax == null ? '' : priceMax}${listColorId == null ? '' : pageListColor}${listSizeId == null ? '' : pageListSize}${listCategoryId == null ? '' : pageListCategory}${listBrandId == null ? '' : pageListBrand}${listMaterialId == null ? '' : pageListMaterial}${listFormId == null ? '' : pageListForm}|}">
+                                        <i style="color: white" class="fa-solid fa-left-long fa-rotate-180"></i></a>
+                                </div>
+                                <div th:if="${pageProductShopResponse.getNumber() + 1 lt pageProductShopResponse.getTotalPages()}"
+                                     class="btn btn-pagination ml-1">
+                                    <a th:href="@{|?page=${pageProductShopResponse.getTotalPages() - 1}&productNameSearch=${productNameSearch == null ? '' : productNameSearch}&status=${status == null ? '' : status}&sort=${sort == null ? '' : sort}&priceMin=${priceMin == null ? '' : priceMin}&priceMax=${priceMax == null ? '' : priceMax}${listColorId == null ? '' : pageListColor}${listSizeId == null ? '' : pageListSize}${listCategoryId == null ? '' : pageListCategory}${listBrandId == null ? '' : pageListBrand}${listMaterialId == null ? '' : pageListMaterial}${listFormId == null ? '' : pageListForm}|}">
+                                        <i style="color: white" class="fa-solid fa-forward-fast"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
                 </div>
             </div>
@@ -664,6 +590,7 @@
 <div th:replace="~{/user/fragments::footer}"></div>
 
 <div th:replace="~{/user/fragments::script}"></div>
+
 </body>
 
 </html>

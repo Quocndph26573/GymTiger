@@ -17,7 +17,7 @@ public class VNPaymentConfig {
     public static String orderType = "other";
     public static String bankCode = "NCB";
     public static String vnp_PayUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-    public static String vnp_ReturnUrl = "http://localhost:8080/vnpay/return";
+    public static String vnp_ReturnUrl = "http://localhost:3000/vnpay/return";
     public static String vnp_TmnCode = "1SB5X4D3";
     public static String secretKey = "IXIQQFNHMEFAGLVDYGHCGXFWQNUZYMAJ";
     public static String vnp_ApiUrl = "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction";
@@ -58,7 +58,7 @@ public class VNPaymentConfig {
         return digest;
     }
 
-    //Util for VNPAY
+//    Util for VNPAY
     public static String hashAllFields(Map fields) {
         List fieldNames = new ArrayList(fields.keySet());
         Collections.sort(fieldNames);

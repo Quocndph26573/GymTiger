@@ -95,9 +95,7 @@
                 <p class="card-text" style="color: black"><i class="fas fa-check" style="padding-right: 8px;"></i><span
                         th:text="${tkNgay.getSoLuongThanhCong() == null ? 0 : tkNgay.getSoLuongThanhCong()}"></span> đơn
                     hàng thành công</p>
-                <p class="card-text" style="color: black"><i class="fas fa-times" style="padding-right: 8px;"></i><span
-                        th:text="${tkNgay.getSoLuongHuy() == null ? 0 : tkNgay.getSoLuongHuy()}"></span> đơn hàng bị hủy
-                </p>
+
                 <p class="card-text" style="color: black"><i class="fas fa-shopping-bag "
                                                              style="padding-right: 8px;"></i><span
                         th:text="${tksanphambanduocNgay?.getSoSanPham() == null ? 0 : tksanphambanduocNgay.getSoSanPham()}"></span>
@@ -118,9 +116,7 @@
                 <p class="card-text" style="color: black"><i class="fas fa-check" style="padding-right: 8px;"></i><span
                         th:text="${tkTuan.getSoLuongThanhCong() == null ? 0 : tkTuan.getSoLuongThanhCong()}"></span> đơn
                     hàng thành công</p>
-                <p class="card-text" style="color: black"><i class="fas fa-times" style="padding-right: 8px;"></i><span
-                        th:text="${tkTuan.getSoLuongHuy() == null ? 0 : tkTuan.getSoLuongHuy()}"></span> đơn hàng bị hủy
-                </p>
+
                 <p class="card-text" style="color: black"><i class="fas fa-shopping-bag "
                                                              style="padding-right: 8px;"></i><span
                         th:text="${sosanPhamBanDuocTuan?.getSoSanPham() == null ? 0 : sosanPhamBanDuocTuan.getSoSanPham()}"></span>
@@ -142,10 +138,7 @@
                         th:text="${tkThang.getSoLuongThanhCong() == null ? 0 : tkThang.getSoLuongThanhCong()}"></span>
                     đơn
                     hàng thành công</p>
-                <p class="card-text" style="color: black"><i class="fas fa-times" style="padding-right: 8px;"></i><span
-                        th:text="${tkThang.getSoLuongHuy() == null ? 0 : tkThang.getSoLuongHuy()}"></span> đơn hàng bị
-                    hủy
-                </p>
+
                 <p class="card-text" style="color: black"><i class="fas fa-shopping-bag "
                                                              style="padding-right: 8px;"></i><span
                         th:text="${sosanPhamBanDuocThang?.getSoSanPham() == null ? 0 : sosanPhamBanDuocThang.getSoSanPham()}"></span>
@@ -167,9 +160,7 @@
                 <p class="card-text" style="color: black"><i class="fas fa-check" style="padding-right: 8px;"></i><span
                         th:text="${tkNam.getSoLuongThanhCong() == null ? 0 : tkNam.getSoLuongThanhCong()}"></span> đơn
                     hàng thành công</p>
-                <p class="card-text" style="color: black"><i class="fas fa-times" style="padding-right: 8px;"></i><span
-                        th:text="${tkNam.getSoLuongHuy() == null ? 0 : tkNam.getSoLuongHuy()}"></span> đơn hàng bị hủy
-                </p>
+
                 <p class="card-text" style="color: black"><i class="fas fa-shopping-bag "
                                                              style="padding-right: 8px;"></i><span
                         th:text="${sosanPhamBanDuocNam?.getSoSanPham() == null ? 0 : sosanPhamBanDuocNam.getSoSanPham()}"></span>
@@ -213,10 +204,7 @@
                         th:text="${thongKeItem.getSoLuongThanhCong() == null ? 0 : thongKeItem.getSoLuongThanhCong()}"></span>
                     đơn
                     hàng thành công</p>
-                <p class="card-text" style="color: black"><i class="fas fa-times" style="padding-right: 8px;"></i><span
-                        th:text="${thongKeItem.getSoLuongHuy() == null ? 0 : thongKeItem.getSoLuongHuy()}"></span> đơn
-                    hàng bị hủy
-                </p>
+
                 <p th:each="thongKeItem1 : ${thongKeSanPhamBanDuocKhoangNgayList}" class="card-text" style="color: black"><i
                         class="fas fa-shopping-bag "
                         style="padding-right: 8px;"></i><span

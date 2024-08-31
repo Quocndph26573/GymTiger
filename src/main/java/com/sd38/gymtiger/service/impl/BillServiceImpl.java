@@ -181,31 +181,20 @@ public class BillServiceImpl implements BillService {
         return null;
     }
 
-    @Override // Ghi đè phương thức từ lớp cha hoặc interface
-    @Transactional // Đảm bảo tất cả các thao tác CSDL trong phương thức này được coi là một đơn vị công việc (hoặc tất cả thành công hoặc tất cả thất bại)
+    @Override
+    @Transactional
     public Bill placeOrder(Cart cart, String name, String specificAddress, String ward, String district, String city, String phoneNumber, String payment, Integer voucher) {
-
-        // Tạo một đối tượng Bill mới để đại diện cho đơn hàng của khách hàng
         Bill bill = new Bill();
-
-        // Tạo và đặt một mã bill duy nhất
         bill.setCode(generateBillCode());
-
-        // Đặt loại bill là 0 (có thể đại diện cho loại đơn hàng tiêu chuẩn)
         bill.setType(0);
-
-        // Đặt thông tin khách hàng
         bill.setCustomerName(name);
-
-        // Định dạng và đặt địa chỉ đầy đủ của khách hàng
         String address = specificAddress + ", " + ward + ", " + district + ", " + city;
         bill.setAddress(address);
         bill.setPhoneNumber(phoneNumber);
         bill.setOrderDate(new Date());
-
-        // Đặt giá ban đầu (từ giỏ hàng) và tính phí vận chuyển
         bill.setPrice(cart.getTotalPrice());
         BigDecimal shippingFee = ghnUtil.calculateShippingFee(city, district, ward, cart.getTotalItems());
+   //     BigDecimal shippingFee = BigDecimal.valueOf(0.0);
         bill.setShippingFee(shippingFee);
 
         // Xử lý việc áp dụng mã giảm giá
@@ -317,7 +306,7 @@ public class BillServiceImpl implements BillService {
         bill.setPhoneNumber(phoneNumber);
         bill.setOrderDate(new Date());
         bill.setPrice(cart.getTotalPrice());
-        BigDecimal shippingFee = ghnUtil.calculateShippingFee(city, district, ward, cart.getTotalItems());
+        BigDecimal shippingFee = ghnUtil.calculateShippingFee(city, district, ward, cart.getTotalItems());;
         bill.setShippingFee(shippingFee);
         if (voucher == null) {
             bill.setDiscountAmount(BigDecimal.ZERO);
@@ -461,22 +450,7 @@ public class BillServiceImpl implements BillService {
         } else {
             bill.setStatus(3);
             bill.setConfirmationDate(new Date());
-//            bill.setShippingFee(shippingFee);
-//            bill.setTotalPrice(bill.getPrice().subtract(bill.getDiscountAmount()).add(shippingFee));
             bill.setEmployee(account);
-//            PaymentMethod paymentMethod = paymentMethodRepository.findByStatusAndBillId(10, id);
-//            if (paymentMethod != null) {
-//                paymentMethod.setMoney(bill.getTotalPrice());
-//                paymentMethodRepository.save(paymentMethod);
-//            } else if (shippingFee.compareTo(BigDecimal.ZERO) != 0) {
-//                PaymentMethod newPaymentMethod = new PaymentMethod();
-//                newPaymentMethod.setName("Thanh toán khi nhận hàng");
-//                newPaymentMethod.setMoney(shippingFee);
-//                newPaymentMethod.setDescription("Thanh toán khi nhận hàng");
-//                newPaymentMethod.setStatus(10);
-//                newPaymentMethod.setBill(bill);
-//                paymentMethodRepository.save(newPaymentMethod);
-//            }
             billRepository.save(bill);
             return true;
         }
@@ -700,7 +674,7 @@ public class BillServiceImpl implements BillService {
             int totalQuantity = billDetailList.stream()
                     .mapToInt(BillDetail::getQuantity)
                     .sum();
-            BigDecimal newShippingFee = ghnUtil.calculateShippingFee(city, district, ward, totalQuantity);
+            BigDecimal newShippingFee =ghnUtil.calculateShippingFee(city, district, ward, totalQuantity);
             bill.setShippingFee(newShippingFee);
             Voucher voucher = bill.getVoucher();
             if (voucher != null){

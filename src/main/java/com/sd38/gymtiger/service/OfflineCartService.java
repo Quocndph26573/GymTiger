@@ -1,6 +1,3 @@
-/*
- *  © 2023 Nyaruko166
- */
 
 package com.sd38.gymtiger.service;
 

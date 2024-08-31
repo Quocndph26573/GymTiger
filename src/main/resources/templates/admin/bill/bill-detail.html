@@ -453,8 +453,10 @@
                             <!-- end table responsive -->
                             <div class="d-print-none mt-4">
                                 <div style="text-align: right">
-<!--                                    <a th:href="@{'/tiger/bill/export-pdf/'+${bill.id}}"-->
-<!--                                       class="btn btn-success me-1"><i class="fa fa-print"></i></a>-->
+
+                                    <a th:href="@{'/tiger/pos/print-pdf/'+${bill.id}}"
+                                       class="btn btn-success me-1"><i class="fa fa-print"></i></a>
+
                                     <a th:href="@{'/tiger/bill'}">
                                         <button type="button" class="btn btn-secondary w-md" data-dismiss="modal">
                                             Đóng
@@ -537,6 +539,11 @@
                                                         <span id="wardError" class="small text-danger"></span>
                                                     </div>
                                                 </div>
+                                                <!-- Thêm các input ẩn vào HTML -->
+                                                <input type="hidden" id="defaultCity" th:value="${defaultAddress != null ? defaultAddress.city : ''}" />
+                                                <input type="hidden" id="defaultDistrict" th:value="${defaultAddress != null ? defaultAddress.district : ''}" />
+                                                <input type="hidden" id="defaultWard" th:value="${defaultAddress != null ? defaultAddress.ward : ''}" />
+
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -557,15 +564,15 @@
     <script>
         const host = "https://provinces.open-api.vn/api/";
 
-        // var defaultCity = document.getElementById('defaultCity').value;
-        // var defaultDistrict = document.getElementById('defaultDistrict').value;
-        // var defaultWard = document.getElementById('defaultWard').value;
+        var defaultCity = document.getElementById('defaultCity').value;
+        var defaultDistrict = document.getElementById('defaultDistrict').value;
+        var defaultWard = document.getElementById('defaultWard').value;
 
         var callAPI = (api) => {
             return axios.get(api)
                 .then((response) => {
                     renderData(response.data, "city");
-                    // $("#city").val(defaultCity).change();
+                    $("#city").val(defaultCity).change();
                 });
         }
         callAPI('https://provinces.open-api.vn/api/?depth=1');
@@ -573,14 +580,15 @@
             return axios.get(api)
                 .then((response) => {
                     renderData(response.data.districts, "district");
-                    // $("#district").val(defaultDistrict).change();
+                    $("#district").val(defaultDistrict).change();
                 });
         }
         var callApiWard = (api) => {
             return axios.get(api)
                 .then((response) => {
                     renderData(response.data.wards, "ward");
-                    // $("#ward").val(defaultWard);
+                    $("#ward").val(defaultWard);
+                    getShippingFee();
                 });
         }
 
@@ -599,46 +607,111 @@
             callApiWard(host + "d/" + $("#district").find(':selected').data('id') + "?depth=2");
         });
     </script>
+
     <script>
         $('.cancel-btn').on('click', function (e) {
             e.preventDefault();
+            // Create a text area for the reason
+            const reasonTextArea = document.createElement('textarea');
+            reasonTextArea.placeholder = 'Nhập lý do hủy đơn';
+            reasonTextArea.style.width = '100%';
+            reasonTextArea.style.height = '80px';
+
             Swal.fire({
                 title: "Xác nhận?",
                 text: `Bạn chắc chắn muốn hủy đơn này?`,
                 icon: "warning",
                 showCancelButton: true,
+                html: `<p>Lý do hủy đơn:</p>
+                       ${reasonTextArea.outerHTML}`,
                 cancelButtonText: 'Hủy',
                 confirmButtonText: 'Xác nhận',
                 reverseButtons: true
             }).then((result) => {
                 if (result.isConfirmed) {
+                    const reason = reasonTextArea.value;
+
+                    // Add the reason to the URL if needed
+                    const url = $(this).attr('href');
+                    const updatedUrl = reason ? `${url}?reason=${encodeURIComponent(reason)}` : url;
+                    window.location.href = $(this).attr('href');
+                }
+            })
+        });
+        $('.cancel-btn').on('click', function (e) {
+            e.preventDefault();
+            // Create a text area for the reason
+            const reasonTextArea = document.createElement('textarea');
+            reasonTextArea.placeholder = 'Nhập lý do hủy đơn';
+            reasonTextArea.style.width = '100%';
+            reasonTextArea.style.height = '80px';
+
+            Swal.fire({
+                title: "Xác nhận?",
+                text: `Bạn chắc chắn muốn hủy đơn này?`,
+                icon: "warning",
+                showCancelButton: true,
+                html: `<p>Lý do hủy đơn:</p>
+                       ${reasonTextArea.outerHTML}`,
+                cancelButtonText: 'Hủy',
+                confirmButtonText: 'Xác nhận',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const reason = reasonTextArea.value;
+
+                    // Add the reason to the URL if needed
+                    const url = $(this).attr('href');
+                    const updatedUrl = reason ? `${url}?reason=${encodeURIComponent(reason)}` : url;
                     window.location.href = $(this).attr('href');
                 }
             })
         });
 
+        //button xác nhận đơn hàng
         $('.confirm-btn').on('click', function (e) {
             e.preventDefault();
+
+            const reasonTextArea = document.createElement('textarea');
+            reasonTextArea.placeholder = 'Nhập ghi chú';
+            reasonTextArea.style.width = '100%';
+            reasonTextArea.style.height = '80px';
+
             Swal.fire({
                 title: "Xác nhận?",
-                text: `Xác nhận đơn hàng này?`,
+                text: "Xác nhận đơn hàng này?",
+                html: `\`<p>Ghi chú:</p>
+                       ${reasonTextArea.outerHTML}\``,
                 icon: "warning",
                 showCancelButton: true,
                 cancelButtonText: 'Hủy',
                 confirmButtonText: 'Xác nhận',
-                reverseButtons: true
+                reverseButtons: true,
+
             }).then((result) => {
                 if (result.isConfirmed) {
+                    const reason = reasonTextArea.value;
+
+                    // Add the reason to the URL if needed
+                    const url = $(this).attr('href');
+                    const updatedUrl = reason ? `${url}?reason=${encodeURIComponent(reason)}` : url;
                     window.location.href = $(this).attr('href');
                 }
             })
         });
 
+        //button xác nhân giao đon hàng
         $('.shipping-btn').on('click', function (e) {
             e.preventDefault();
+            const reasonTextArea = document.createElement('textarea');
+            reasonTextArea.placeholder = 'Nhập ghi chú';
+            reasonTextArea.style.width = '100%';
+            reasonTextArea.style.height = '80px';
             Swal.fire({
                 title: "Xác nhận?",
                 text: `Xác nhận giao đơn này?`,
+                html: `\`<p>Ghi chú:</p>
+                       ${reasonTextArea.outerHTML}\``,
                 icon: "warning",
                 showCancelButton: true,
                 cancelButtonText: 'Hủy',
@@ -646,6 +719,11 @@
                 reverseButtons: true
             }).then((result) => {
                 if (result.isConfirmed) {
+                    const reason = reasonTextArea.value;
+
+                    // Add the reason to the URL if needed
+                    const url = $(this).attr('href');
+                    const updatedUrl = reason ? `${url}?reason=${encodeURIComponent(reason)}` : url;
                     window.location.href = $(this).attr('href');
                 }
             })
@@ -653,9 +731,15 @@
 
         $('.complete-btn').on('click', function (e) {
             e.preventDefault();
+            const reasonTextArea = document.createElement('textarea');
+            reasonTextArea.placeholder = 'Nhập ghi chú';
+            reasonTextArea.style.width = '100%';
+            reasonTextArea.style.height = '80px';
             Swal.fire({
                 title: "Xác nhận?",
                 text: `Xác nhận đã giao thành công đơn này?`,
+                html: `\`<p>Ghi chú:</p>
+                       ${reasonTextArea.outerHTML}\``,
                 icon: "warning",
                 showCancelButton: true,
                 cancelButtonText: 'Hủy',
@@ -663,6 +747,11 @@
                 reverseButtons: true
             }).then((result) => {
                 if (result.isConfirmed) {
+                    const reason = reasonTextArea.value;
+
+                    // Add the reason to the URL if needed
+                    const url = $(this).attr('href');
+                    const updatedUrl = reason ? `${url}?reason=${encodeURIComponent(reason)}` : url;
                     window.location.href = $(this).attr('href');
                 }
             })

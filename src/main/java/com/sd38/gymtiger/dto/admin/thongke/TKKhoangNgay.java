@@ -10,6 +10,4 @@ public interface TKKhoangNgay {
 
     BigDecimal getDoanhThu();
 
-    Integer getSoLuongHuy();
-
 }

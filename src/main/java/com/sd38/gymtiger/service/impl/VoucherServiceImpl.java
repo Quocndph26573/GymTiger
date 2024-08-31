@@ -115,8 +115,6 @@ public class VoucherServiceImpl implements VoucherService {
         if (checkName(voucher.getName())) {
             voucher.setCreateDate(new Date());
             voucher.setUpdateDate(new Date());
-            voucher.setQuantity(5000);
-            voucher.setMinimumPrice(BigDecimal.valueOf(1.0));
             voucher.updateStatus();
             voucher.setCode(generateCode());
             voucherRepository.save(voucher);
@@ -136,10 +134,7 @@ public class VoucherServiceImpl implements VoucherService {
                 voucher.setCode(oldVoucher.getCode());
                 voucher.setCreateDate(oldVoucher.getCreateDate());
                 voucher.setUpdateDate(new Date());
-                voucher.setQuantity(5000);
-                voucher.setMinimumPrice(BigDecimal.valueOf(1.0));
                 voucher.setStatus(oldVoucher.getStatus());
-
                 voucher.updateStatus();
                 voucherRepository.save(voucher);
                 return true;
@@ -159,10 +154,9 @@ public class VoucherServiceImpl implements VoucherService {
                 }
             }
         }else{
-                return null;
-            }
+            return null;
         }
-
+    }
 
     @Override
     public Voucher delete(Integer id) {
